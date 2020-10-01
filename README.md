@@ -1,0 +1,2 @@
+# type
+typescript type check
