@@ -40,7 +40,7 @@ function isBoolean(val) {
 }
 
 function isBuffer(val) {
-  return val !== null && !isUndefined(val) && val.constructor !== null && !isUndefined(val.constructor) && typeof val.constructor.isBuffer === 'function' && val.constructor.isBuffer(val);
+  return !!(val != null && val.constructor != null && typeof val.constructor.isBuffer === 'function' && val.constructor.isBuffer(val));
 }
 
 function isArrayBuffer(val) {
@@ -52,15 +52,11 @@ function isFormData(val) {
 }
 
 function isArrayBufferView(val) {
-  var result;
-
   if (typeof ArrayBuffer !== 'undefined' && ArrayBuffer.isView) {
-    result = ArrayBuffer.isView(val);
+    return ArrayBuffer.isView(val);
   } else {
-    result = val && val.buffer && val.buffer instanceof ArrayBuffer;
+    return val && val.buffer && val.buffer instanceof ArrayBuffer;
   }
-
-  return result;
 }
 
 function isString(val) {

@@ -44,17 +44,11 @@ function isBoolean(val) {
  * Determine if a value is a Buffer
  *
  * @param {Object} val The value to test
- * @returns {boolean} True if value is a Buffer, otherwise false
+ * @returns { Boolean } True if value is a Buffer, otherwise false
  */
-function isBuffer(val) {
-  return (
-    val !== null &&
-    !isUndefined(val) &&
-    val.constructor !== null &&
-    !isUndefined(val.constructor) &&
-    typeof val.constructor.isBuffer === 'function' &&
-    val.constructor.isBuffer(val)
-  );
+function isBuffer (val) {
+  return !!(val != null && val.constructor != null &&
+    typeof val.constructor.isBuffer === 'function' && val.constructor.isBuffer(val))
 }
 
 /**
@@ -82,15 +76,24 @@ function isFormData(val) {
  *
  * @param {Object} val The value to test
  * @returns {boolean} True if value is a view on an ArrayBuffer, otherwise false
+ * ```
+ * ArrayBuffer.isView();                                  // false
+ * ArrayBuffer.isView([]);                                // false
+ * ArrayBuffer.isView({});                                // false
+ * ArrayBuffer.isView(null);                              // false
+ * ArrayBuffer.isView(undefined);                         // false
+ * ArrayBuffer.isView(new ArrayBuffer(10));               // false
+ * ArrayBuffer.isView(new Uint8Array());                  // true
+ * ArrayBuffer.isView(new Float32Array());                // true
+ * ArrayBuffer.isView(new Int8Array(10).subarray(0, 3));  // true
+ * ```
  */
 function isArrayBufferView(val) {
-  let result;
   if (typeof ArrayBuffer !== 'undefined' && ArrayBuffer.isView) {
-    result = ArrayBuffer.isView(val);
+    return ArrayBuffer.isView(val);
   } else {
-    result = val && val.buffer && val.buffer instanceof ArrayBuffer;
+    return val && val.buffer && val.buffer instanceof ArrayBuffer;
   }
-  return result;
 }
 
 /**
