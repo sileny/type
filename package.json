@@ -1,5 +1,5 @@
 {
-  "name": "type",
+  "name": "@silen/type",
   "version": "1.0.0",
   "description": "Type check in TypeScript",
   "author": "sunsilent",
