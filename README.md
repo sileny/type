@@ -49,7 +49,9 @@ npm i @silen/type
 # usage
 
 ```js
-const { isBuffer } = require('./dist');
+const { isBuffer } = require('@silen/type');
+// or
+import { isBuffer } from '@silen/type';
 
 console.log(isBuffer(new Buffer(4)));
 console.log(isBuffer(Buffer.alloc(4)));
