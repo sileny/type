@@ -68,7 +68,7 @@ function isArrayBuffer(val) {
  * @returns {boolean} True if value is an FormData, otherwise false
  */
 function isFormData(val) {
-  return typeof FormData !== 'undefined' && val instanceof FormData;
+  return toStr.call(val) === '[object FormData]';
 }
 
 /**
