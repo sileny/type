@@ -1,7 +1,7 @@
 # type
 typescript type check
 
-## install
+# install
 
 ```
 npm i @silen/type
@@ -73,3 +73,42 @@ console.log(isBuffer(new WeakSet));
 ```
 
 This is a demo for testing the usage of `isBuffer` from `type` module. You can try the others and do likewise.
+
+# others
+
+- [sArray](https://www.npmjs.com/@silen/is-array)
+- [sUndefined](https://www.npmjs.com/@silen/is-undefined)
+- [sNull](https://www.npmjs.com/@silen/is-null)
+- [sBoolean](https://www.npmjs.com/@silen/is-boolean)
+- [sBuffer](https://www.npmjs.com/@silen/is-buffer)
+- [sArrayBuffer](https://www.npmjs.com/@silen/is-array-buffer)
+- [sFormData](https://www.npmjs.com/@silen/is-form-data)
+- [sFunction](https://www.npmjs.com/@silen/is-function)
+- [sArrayBufferView](https://www.npmjs.com/@silen/is-array-buffer-view)
+- [sString](https://www.npmjs.com/@silen/is-string)
+- [sNumber](https://www.npmjs.com/@silen/is-number)
+- [sObject](https://www.npmjs.com/@silen/is-object)
+- [sPlainObject](https://www.npmjs.com/@silen/is-plain-object)
+- [sDate](https://www.npmjs.com/@silen/is-date)
+- [sArguments](https://www.npmjs.com/@silen/is-arguments)
+- [sFile](https://www.npmjs.com/@silen/is-file)
+- [sBlob](https://www.npmjs.com/@silen/is-blob)
+- [sSymbol](https://www.npmjs.com/@silen/is-symbol)
+- [sRegExp](https://www.npmjs.com/@silen/is-reg-exp)
+- [sInt8Array](https://www.npmjs.com/@silen/is-int8-array)
+- [sUint8Array](https://www.npmjs.com/@silen/is-uint8-array)
+- [sUint8ClampedArray](https://www.npmjs.com/@silen/is-uint8-clamped-array)
+- [sInt16Array](https://www.npmjs.com/@silen/is-int16-array)
+- [sUint16Array](https://www.npmjs.com/@silen/is-uint16-array)
+- [sInt32Array](https://www.npmjs.com/@silen/is-int32-array)
+- [sUint32Array](https://www.npmjs.com/@silen/is-uint32-array)
+- [sFloat32Array](https://www.npmjs.com/@silen/is-float32-array)
+- [sFloat64Array](https://www.npmjs.com/@silen/is-float64-array)
+- [sError](https://www.npmjs.com/@silen/is-error)
+- [sPromise](https://www.npmjs.com/@silen/is-promise)
+- [sSet](https://www.npmjs.com/@silen/is-set)
+- [sWeakSet](https://www.npmjs.com/@silen/is-weak-set)
+- [sMap](https://www.npmjs.com/@silen/is-map)
+- [sWeakMap](https://www.npmjs.com/@silen/is-weak-map)
+- [sStream](https://www.npmjs.com/@silen/is-stream)
+- [sURLSearchParams](https://www.npmjs.com/@silen/is-url-search-params)
