@@ -70,6 +70,9 @@ console.log(isBuffer(new Set));
 console.log(isBuffer(new Map));
 console.log(isBuffer(new WeakMap));
 console.log(isBuffer(new WeakSet));
+
+// or
+console.log(window.Type.isBuffer(''));
 ```
 
 This is a demo for testing the usage of `isBuffer` from `type` module. You can try the others and do likewise.
