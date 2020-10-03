@@ -1,5 +1,5 @@
 /*!
-  * type v1.0.0
+  * @silen/type v1.0.0
   * (c) 2020
   * author: sunsilent
   * email: sunsilently@outlook.com
@@ -8,6 +8,13 @@
 var TypeHelper = (function (exports) {
   'use strict';
 
+  /*!
+    * @silen/type v1.0.0
+    * (c) 2020
+    * author: sunsilent
+    * email: sunsilently@outlook.com
+    * @license MIT
+    */
   function _typeof(obj) {
     "@babel/helpers - typeof";
 
@@ -24,10 +31,27 @@ var TypeHelper = (function (exports) {
     return _typeof(obj);
   }
 
+  function isObject(val) {
+    return val !== null && _typeof(val) === 'object';
+  }
+
+  /*!
+    * @silen/type v1.0.0
+    * (c) 2020
+    * author: sunsilent
+    * email: sunsilently@outlook.com
+    * @license MIT
+    */
   var toStr = Object.prototype.toString;
 
+  function isFunction(val) {
+    return toStr.call(val) === '[object Function]';
+  }
+
+  var toStr$1 = Object.prototype.toString;
+
   function isArray(val) {
-    return toStr.call(val) === '[object Array]';
+    return toStr$1.call(val) === '[object Array]';
   }
 
   function isUndefined(val) {
@@ -35,11 +59,11 @@ var TypeHelper = (function (exports) {
   }
 
   function isNull(val) {
-    return toStr.call(val) === '[object Null]';
+    return toStr$1.call(val) === '[object Null]';
   }
 
   function isBoolean(val) {
-    return toStr.call(val) === '[object Boolean]';
+    return toStr$1.call(val) === '[object Boolean]';
   }
 
   function isBuffer(val) {
@@ -47,11 +71,11 @@ var TypeHelper = (function (exports) {
   }
 
   function isArrayBuffer(val) {
-    return toStr.call(val) === '[object ArrayBuffer]';
+    return toStr$1.call(val) === '[object ArrayBuffer]';
   }
 
   function isFormData(val) {
-    return typeof FormData !== 'undefined' && val instanceof FormData;
+    return toStr$1.call(val) === '[object FormData]';
   }
 
   function isArrayBufferView(val) {
@@ -70,12 +94,8 @@ var TypeHelper = (function (exports) {
     return typeof val === 'number';
   }
 
-  function isObject(val) {
-    return val !== null && _typeof(val) === 'object';
-  }
-
   function isPlainObject(val) {
-    if (toStr.call(val) !== '[object Object]') {
+    if (toStr$1.call(val) !== '[object Object]') {
       return false;
     }
 
@@ -84,91 +104,87 @@ var TypeHelper = (function (exports) {
   }
 
   function isDate(val) {
-    return toStr.call(val) === '[object Date]';
+    return toStr$1.call(val) === '[object Date]';
   }
 
   function isArguments(val) {
-    return toStr.call(val) === '[object Arguments]';
+    return toStr$1.call(val) === '[object Arguments]';
   }
 
   function isFile(val) {
-    return toStr.call(val) === '[object File]';
+    return toStr$1.call(val) === '[object File]';
   }
 
   function isBlob(val) {
-    return toStr.call(val) === '[object Blob]';
-  }
-
-  function isFunction(val) {
-    return toStr.call(val) === '[object Function]';
+    return toStr$1.call(val) === '[object Blob]';
   }
 
   function isSymbol(val) {
-    return toStr.call(val) === '[object Symbol]';
+    return toStr$1.call(val) === '[object Symbol]';
   }
 
   function isRegExp(val) {
-    return toStr.call(val) === '[object RegExp]';
+    return toStr$1.call(val) === '[object RegExp]';
   }
 
   function isInt8Array(val) {
-    return toStr.call(val) === '[object Int8Array]';
+    return toStr$1.call(val) === '[object Int8Array]';
   }
 
   function isUint8Array(val) {
-    return toStr.call(val) === '[object Uint8Array]';
+    return toStr$1.call(val) === '[object Uint8Array]';
   }
 
   function isUint8ClampedArray(val) {
-    return toStr.call(val) === '[object Uint8ClampedArray]';
+    return toStr$1.call(val) === '[object Uint8ClampedArray]';
   }
 
   function isInt16Array(val) {
-    return toStr.call(val) === '[object Int16Array]';
+    return toStr$1.call(val) === '[object Int16Array]';
   }
 
   function isUint16Array(val) {
-    return toStr.call(val) === '[object Uint16Array]';
+    return toStr$1.call(val) === '[object Uint16Array]';
   }
 
   function isInt32Array(val) {
-    return toStr.call(val) === '[object Int32Array]';
+    return toStr$1.call(val) === '[object Int32Array]';
   }
 
   function isUint32Array(val) {
-    return toStr.call(val) === '[object Uint32Array]';
+    return toStr$1.call(val) === '[object Uint32Array]';
   }
 
   function isFloat32Array(val) {
-    return toStr.call(val) === '[object Float32Array]';
+    return toStr$1.call(val) === '[object Float32Array]';
   }
 
   function isFloat64Array(val) {
-    return toStr.call(val) === '[object Float64Array]';
+    return toStr$1.call(val) === '[object Float64Array]';
   }
 
   function isError(val) {
-    return toStr.call(val) === '[object Error]';
+    return toStr$1.call(val) === '[object Error]';
   }
 
   function isPromise(val) {
-    return toStr.call(val) === '[object Promise]';
+    return toStr$1.call(val) === '[object Promise]';
   }
 
   function isSet(val) {
-    return toStr.call(val) === '[object Set]';
+    return toStr$1.call(val) === '[object Set]';
   }
 
   function isWeakSet(val) {
-    return toStr.call(val) === '[object WeakSet]';
+    return toStr$1.call(val) === '[object WeakSet]';
   }
 
   function isMap(val) {
-    return toStr.call(val) === '[object Map]';
+    return toStr$1.call(val) === '[object Map]';
   }
 
   function isWeakMap(val) {
-    return toStr.call(val) === '[object WeakMap]';
+    return toStr$1.call(val) === '[object WeakMap]';
   }
 
   function isStream(val) {
@@ -176,7 +192,7 @@ var TypeHelper = (function (exports) {
   }
 
   function isURLSearchParams(val) {
-    return typeof URLSearchParams !== 'undefined' && val instanceof URLSearchParams;
+    return toStr$1.call(val) === '[object URLSearchParams]';
   }
 
   exports.isArguments = isArguments;

@@ -78,9 +78,6 @@
     ],
     "src/**/*.ts?(x)": [
       "prettier --parser=typescript --write"
-    ],
-    "src/**/*.{jsx,json,css,scss,vue}": [
-      "prettier --write"
     ]
   },
   "devDependencies": {
@@ -100,5 +97,8 @@
     "rollup-plugin-typescript2": "^0.27.3",
     "typescript": "^4.0.3"
   },
-  "dependencies": {}
+  "dependencies": {
+    "@silen/is-function": "^1.0.0",
+    "@silen/is-object": "^1.0.0"
+  }
 }

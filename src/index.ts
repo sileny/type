@@ -1,4 +1,6 @@
 const toStr = Object.prototype.toString;
+import { isObject } from "@silen/is-object";
+import { isFunction } from "@silen/is-function";
 
 /**
  * Determine if a value is an Array
@@ -117,16 +119,6 @@ function isNumber(val) {
 }
 
 /**
- * Determine if a value is an Object
- *
- * @param {Object} val The value to test
- * @returns {boolean} True if value is an Object, otherwise false
- */
-function isObject(val) {
-  return val !== null && typeof val === 'object';
-}
-
-/**
  * Determine if a value is a plain Object
  *
  * @param {Object} val The value to test
@@ -179,16 +171,6 @@ function isFile(val) {
  */
 function isBlob(val) {
   return toStr.call(val) === '[object Blob]';
-}
-
-/**
- * Determine if a value is a Function
- *
- * @param {Object} val The value to test
- * @returns {boolean} True if value is a Function, otherwise false
- */
-function isFunction(val) {
-  return toStr.call(val) === '[object Function]';
 }
 
 /**
@@ -378,7 +360,7 @@ function isStream(val) {
  * @returns {boolean} True if value is a URLSearchParams object, otherwise false
  */
 function isURLSearchParams(val) {
-  return typeof URLSearchParams !== 'undefined' && val instanceof URLSearchParams;
+  return toStr.call(val) === '[object URLSearchParams]';
 }
 
 export {
