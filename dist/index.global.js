@@ -5,7 +5,7 @@
   * email: sunsilently@outlook.com
   * @license MIT
   */
-var TypeHelper = (function (exports) {
+var Type = (function (exports) {
   'use strict';
 
   /*!

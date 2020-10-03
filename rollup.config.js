@@ -9,6 +9,8 @@ import typescript from 'rollup-plugin-typescript2';
 const pkg = require('./package.json');
 const { author, email } = pkg;
 
+const GlobalName = 'Type';
+
 const banner = `/*!
   * ${ pkg.name } v${ pkg.version }
   * (c) ${ new Date().getFullYear() }
@@ -34,7 +36,7 @@ const outputConfigs = {
   umd: {
     file: pkg.browser,
     format: 'umd',
-    name: 'index'
+    name: GlobalName
   }
 };
 
@@ -67,7 +69,7 @@ function createConfig(format, output, plugins = []) {
   const isRawESMBuild = format === 'esm';
   const isNodeBuild = format === 'cjs';
 
-  if (isGlobalBuild) output.name = 'TypeHelper';
+  if (isGlobalBuild) output.name = GlobalName;
 
   const tsPlugin = typescript({
     check: true,
@@ -125,7 +127,7 @@ function createMinifiedConfig(format) {
     {
       file: outputConfigs[format].file.replace(/\.js$/, '.min.js'),
       format: outputConfigs[format].format,
-      name: 'index'
+      name: GlobalName
     },
     [terser()]
   )
