@@ -6,7 +6,7 @@
   * @license MIT
   */
 /*!
-  * @silen/type v1.0.0
+  * @silen/is-object v1.0.3
   * (c) 2020
   * author: sunsilent
   * email: sunsilently@outlook.com
@@ -33,7 +33,7 @@ function isObject(val) {
 }
 
 /*!
-  * @silen/type v1.0.0
+  * @silen/is-function v1.0.3
   * (c) 2020
   * author: sunsilent
   * email: sunsilently@outlook.com
