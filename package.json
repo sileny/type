@@ -24,7 +24,8 @@
   },
   "keywords": [
     "type",
-    "typescript","is-arguments",
+    "typescript",
+    "is-arguments",
     "is-array",
     "is-array-buffer",
     "is-array-buffer-view",
