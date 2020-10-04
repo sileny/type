@@ -50,32 +50,16 @@ var Type = (function (exports) {
 
   var toStr$1 = Object.prototype.toString;
 
+  function isArguments(val) {
+    return toStr$1.call(val) === '[object Arguments]';
+  }
+
   function isArray(val) {
     return toStr$1.call(val) === '[object Array]';
   }
 
-  function isUndefined(val) {
-    return typeof val === 'undefined';
-  }
-
-  function isNull(val) {
-    return toStr$1.call(val) === '[object Null]';
-  }
-
-  function isBoolean(val) {
-    return toStr$1.call(val) === '[object Boolean]';
-  }
-
-  function isBuffer(val) {
-    return !!(val != null && val.constructor != null && typeof val.constructor.isBuffer === 'function' && val.constructor.isBuffer(val));
-  }
-
   function isArrayBuffer(val) {
     return toStr$1.call(val) === '[object ArrayBuffer]';
-  }
-
-  function isFormData(val) {
-    return toStr$1.call(val) === '[object FormData]';
   }
 
   function isArrayBufferView(val) {
@@ -86,8 +70,60 @@ var Type = (function (exports) {
     }
   }
 
-  function isString(val) {
-    return typeof val === 'string';
+  function isBlob(val) {
+    return toStr$1.call(val) === '[object Blob]';
+  }
+
+  function isBoolean(val) {
+    return toStr$1.call(val) === '[object Boolean]';
+  }
+
+  function isBuffer(val) {
+    return !!(val != null && val.constructor != null && typeof val.constructor.isBuffer === 'function' && val.constructor.isBuffer(val));
+  }
+
+  function isDate(val) {
+    return toStr$1.call(val) === '[object Date]';
+  }
+
+  function isError(val) {
+    return toStr$1.call(val) === '[object Error]';
+  }
+
+  function isFile(val) {
+    return toStr$1.call(val) === '[object File]';
+  }
+
+  function isFloat32Array(val) {
+    return toStr$1.call(val) === '[object Float32Array]';
+  }
+
+  function isFloat64Array(val) {
+    return toStr$1.call(val) === '[object Float64Array]';
+  }
+
+  function isFormData(val) {
+    return toStr$1.call(val) === '[object FormData]';
+  }
+
+  function isInt16Array(val) {
+    return toStr$1.call(val) === '[object Int16Array]';
+  }
+
+  function isInt32Array(val) {
+    return toStr$1.call(val) === '[object Int32Array]';
+  }
+
+  function isInt8Array(val) {
+    return toStr$1.call(val) === '[object Int8Array]';
+  }
+
+  function isMap(val) {
+    return toStr$1.call(val) === '[object Map]';
+  }
+
+  function isNull(val) {
+    return toStr$1.call(val) === '[object Null]';
   }
 
   function isNumber(val) {
@@ -103,32 +139,40 @@ var Type = (function (exports) {
     return prototype === null || prototype === Object.prototype;
   }
 
-  function isDate(val) {
-    return toStr$1.call(val) === '[object Date]';
-  }
-
-  function isArguments(val) {
-    return toStr$1.call(val) === '[object Arguments]';
-  }
-
-  function isFile(val) {
-    return toStr$1.call(val) === '[object File]';
-  }
-
-  function isBlob(val) {
-    return toStr$1.call(val) === '[object Blob]';
-  }
-
-  function isSymbol(val) {
-    return toStr$1.call(val) === '[object Symbol]';
+  function isPromise(val) {
+    return toStr$1.call(val) === '[object Promise]';
   }
 
   function isRegExp(val) {
     return toStr$1.call(val) === '[object RegExp]';
   }
 
-  function isInt8Array(val) {
-    return toStr$1.call(val) === '[object Int8Array]';
+  function isSet(val) {
+    return toStr$1.call(val) === '[object Set]';
+  }
+
+  function isStream(val) {
+    return isObject(val) && isFunction(val.pipe);
+  }
+
+  function isString(val) {
+    return typeof val === 'string';
+  }
+
+  function isSymbol(val) {
+    return toStr$1.call(val) === '[object Symbol]';
+  }
+
+  function isURLSearchParams(val) {
+    return toStr$1.call(val) === '[object URLSearchParams]';
+  }
+
+  function isUint16Array(val) {
+    return toStr$1.call(val) === '[object Uint16Array]';
+  }
+
+  function isUint32Array(val) {
+    return toStr$1.call(val) === '[object Uint32Array]';
   }
 
   function isUint8Array(val) {
@@ -139,60 +183,16 @@ var Type = (function (exports) {
     return toStr$1.call(val) === '[object Uint8ClampedArray]';
   }
 
-  function isInt16Array(val) {
-    return toStr$1.call(val) === '[object Int16Array]';
-  }
-
-  function isUint16Array(val) {
-    return toStr$1.call(val) === '[object Uint16Array]';
-  }
-
-  function isInt32Array(val) {
-    return toStr$1.call(val) === '[object Int32Array]';
-  }
-
-  function isUint32Array(val) {
-    return toStr$1.call(val) === '[object Uint32Array]';
-  }
-
-  function isFloat32Array(val) {
-    return toStr$1.call(val) === '[object Float32Array]';
-  }
-
-  function isFloat64Array(val) {
-    return toStr$1.call(val) === '[object Float64Array]';
-  }
-
-  function isError(val) {
-    return toStr$1.call(val) === '[object Error]';
-  }
-
-  function isPromise(val) {
-    return toStr$1.call(val) === '[object Promise]';
-  }
-
-  function isSet(val) {
-    return toStr$1.call(val) === '[object Set]';
-  }
-
-  function isWeakSet(val) {
-    return toStr$1.call(val) === '[object WeakSet]';
-  }
-
-  function isMap(val) {
-    return toStr$1.call(val) === '[object Map]';
+  function isUndefined(val) {
+    return typeof val === 'undefined';
   }
 
   function isWeakMap(val) {
     return toStr$1.call(val) === '[object WeakMap]';
   }
 
-  function isStream(val) {
-    return isObject(val) && isFunction(val.pipe);
-  }
-
-  function isURLSearchParams(val) {
-    return toStr$1.call(val) === '[object URLSearchParams]';
+  function isWeakSet(val) {
+    return toStr$1.call(val) === '[object WeakSet]';
   }
 
   exports.isArguments = isArguments;
