@@ -1,6 +1,6 @@
 {
   "name": "@silen/type",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Type check in TypeScript",
   "author": "sunsilent",
   "email": "sunsilently@outlook.com",
